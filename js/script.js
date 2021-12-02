@@ -21,7 +21,8 @@ function willIExplode (square, number) {
         if (!(arrayBombs.includes(number))) {
             square.classList.add('clicked');
         } else if ((arrayBombs.includes(number))) {
-            square.classList.add('explode')
+            square.classList.add('explode');
+            unCLickable();
         }
     });
 }
@@ -39,6 +40,12 @@ function generateSquaresWithNumbers (min, max) {
         willIExplode(square, number);
     }
 }
+function unCLickable() {
+    let divWithSquare = document.getElementsByClassName("square");
+    for (let i = 0; i < divWithSquare.length; i++) {
+        divWithSquare[i].style.pointerEvents = "none";
+    }
+  }
 btnPlay.addEventListener('click', function () {
     if (selectForm.value == 0) {
         gridContainer.classList.add('size-difficulty-0');
