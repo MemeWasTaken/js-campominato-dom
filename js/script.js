@@ -3,6 +3,7 @@ let selectForm = document.getElementById('difficulty-selection');
 let gridContainer = document.querySelector('.grid-container');
 let arrayNumbers = [];
 let arrayBombs = [];
+let numbersGuessed = [];
 function randomNumberFrom (min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
@@ -20,9 +21,11 @@ function willIExplode (square, number) {
     square.addEventListener('click', function () {
         if (!(arrayBombs.includes(number))) {
             square.classList.add('clicked');
+            numbersGuessed.push(number);
         } else if ((arrayBombs.includes(number))) {
             square.classList.add('explode');
             unCLickable();
+            alert('Hai perso, il tuo ounteggio è: ' + numbersGuessed.length);
         }
     });
 }
