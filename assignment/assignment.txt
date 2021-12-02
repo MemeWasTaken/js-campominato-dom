@@ -18,6 +18,8 @@ TIPS:
     Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
     Le validazioni e i controlli possiamo farli in un secondo momento.
 
+
+
 // SECTION Parte 2 //
 
 Exercise: Campo Minato

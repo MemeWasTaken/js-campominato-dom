@@ -112,3 +112,11 @@ body {
     background-color: #6495ED;
     color: #FFFFFF;
 }
+.square.explode {
+    background-color: #e0454d;
+    color: #000000;
+}
+
+.square:hover {
+    cursor: default;
+}

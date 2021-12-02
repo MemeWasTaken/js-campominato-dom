@@ -2,6 +2,7 @@ let btnPlay = document.getElementById('btn-play');
 let selectForm = document.getElementById('difficulty-selection');
 let gridContainer = document.querySelector('.grid-container');
 let arrayNumbers = [];
+let arrayBombs = [];
 function randomNumberFrom (min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
@@ -25,9 +26,21 @@ btnPlay.addEventListener('click', function () {
             square.append(number);
             gridContainer.append(square);
             square.addEventListener('click', function () {
-                square.classList.add('clicked');
-                // console.log('Funziona');
+                if (!(arrayBombs.includes(number))) {
+                    square.classList.add('clicked');
+                    // console.log('Funziona');
+                } else if ((arrayBombs.includes(number))) {
+                    square.classList.add('explode')
+                }
             });
+        }
+        for (let i = 0; i < 16; i++) {
+            let bomb = randomNumberFrom(1, 101);
+            while (arrayBombs.includes(bomb)) {
+                bomb = randomNumberFrom(1, 101);
+            }
+            arrayBombs.push(bomb);
+            console.log(bomb);
         }
 
     } else if (selectForm.value == 1) {
@@ -45,9 +58,21 @@ btnPlay.addEventListener('click', function () {
             square.append(number);
             gridContainer.append(square);
             square.addEventListener('click', function () {
-                square.classList.add('clicked');
-                // console.log('Funziona');
+                if (!(arrayBombs.includes(number))) {
+                    square.classList.add('clicked');
+                    // console.log('Funziona');
+                } else if ((arrayBombs.includes(number))) {
+                    square.classList.add('explode')
+                }
             });
+        }
+        for (let i = 0; i < 16; i++) {
+            let bomb = randomNumberFrom(1, 82);
+            while (arrayBombs.includes(bomb)) {
+                bomb = randomNumberFrom(1, 82);
+            }
+            arrayBombs.push(bomb);
+            console.log(bomb);
         }
 
 
@@ -66,9 +91,21 @@ btnPlay.addEventListener('click', function () {
             square.append(number);
             gridContainer.append(square);
             square.addEventListener('click', function () {
-                square.classList.add('clicked');
-                // console.log('Funziona');
+                if (!(arrayBombs.includes(number))) {
+                    square.classList.add('clicked');
+                    // console.log('Funziona');
+                } else if ((arrayBombs.includes(number))) {
+                    square.classList.add('explode')
+                }
             });
+        }
+        for (let i = 0; i < 16; i++) {
+            let bomb = randomNumberFrom(1, 50);
+            while (arrayBombs.includes(bomb)) {
+                bomb = randomNumberFrom(1, 50);
+            }
+            arrayBombs.push(bomb);
+            console.log(bomb);
         }
 
 
